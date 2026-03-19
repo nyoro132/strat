@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>レスキューライン 採点システム </title>
+    <title>レスキューライン 採点システム iPad最適化版</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         :root{
@@ -901,6 +901,7 @@
             <div class="topbar-row">
                 <div class="brand">
                     <h1>レスキューライン 採点システム</h1>
+                    <p>11インチiPadでの横向き採点を想定し、指で押しやすいサイズと固定表示を強化しました。</p>
                 </div>
                 <div class="top-right">
                     <div class="estimate-panel">
@@ -921,6 +922,7 @@
                 </div>
                 <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
                     <div id="timerStateBadge" class="badge">停止中</div>
+                    <div class="badge" style="background:#f7fbff;">iPad推奨: 横向き・Safariの全画面表示</div>
                 </div>
             </div>
         </header>
@@ -952,8 +954,9 @@
 
                     <div class="top-actions">
                         <button id="addStartButton" class="btn-primary big-toggle">スタート点獲得</button>
-                        <button id="goalToggleButton" class="btn-primary big-toggle">ゴール点獲得</button>
-                        <button id="rescueToggleButton" class="btn-primary big-toggle">救助完了</button>
+                    </div>
+                    <div class="muted" style="margin-top:12px; font-weight:700; font-size:1rem;">
+                        ※「ゴール点獲得」「救助完了」は採点終盤で押しやすいよう、ページ下側に配置しています。
                     </div>
 
                     <div class="summary-grid" style="margin-top:14px;">
@@ -1175,6 +1178,20 @@
                                     <button id="clearSignature" class="btn-outline">署名をクリア</button>
                                 </div>
                             </div>
+                        </div>
+                    </section>
+
+                    <section class="card">
+                        <div class="card-title-row">
+                            <div>
+                                <h2 class="card-title">試合終盤の確定操作</h2>
+                                <p class="card-desc">最後の確認後に押す操作を下側にまとめています。ゴール確定と救助完了の入力をここで行ってください。</p>
+                            </div>
+                            <span class="badge warning">終盤操作</span>
+                        </div>
+                        <div class="top-actions" style="margin-top:0;">
+                            <button id="goalToggleButton" class="btn-primary big-toggle">ゴール点獲得</button>
+                            <button id="rescueToggleButton" class="btn-primary big-toggle">救助完了</button>
                         </div>
                     </section>
 
