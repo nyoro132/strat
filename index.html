@@ -901,6 +901,50 @@
             }
         }
 
+        @media (max-width: 1280px) and (min-width: 821px) {
+            body.reference-layout .reference-panel-body {
+                gap: 10px;
+            }
+
+            body.reference-layout #goalPointPreview,
+            body.reference-layout #rescueMultiplierBox,
+            body.reference-layout #rescueOrderBox {
+                margin-top: 10px !important;
+                padding: 10px 12px;
+            }
+
+            body.reference-layout .obs-name,
+            body.reference-layout .res-name,
+            body.reference-layout .tile-title {
+                font-size: 0.95rem;
+            }
+
+            body.reference-layout #rescueMultiplierValue {
+                font-size: 1.8rem !important;
+            }
+
+            body.reference-layout #rescueMultiplierNote,
+            body.reference-layout #rescueOrderStatus,
+            body.reference-layout #rescueOrderText {
+                line-height: 1.35;
+            }
+
+            body.reference-layout .reference-panel-body::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            body.reference-layout .reference-panel-body::-webkit-scrollbar-thumb {
+                background: rgba(255,255,255,0.55);
+                border-radius: 999px;
+                border: 2px solid rgba(11,47,61,0.15);
+            }
+
+            body.reference-layout .reference-panel-body::-webkit-scrollbar-track {
+                background: rgba(255,255,255,0.15);
+                border-radius: 999px;
+            }
+        }
+
         @media (max-width: 820px) {
             body {
                 padding: 12px 12px 24px;
@@ -1108,6 +1152,7 @@
             min-height: 0;
             flex: 1;
             overflow-y: auto;
+            overflow-x: hidden;
             overscroll-behavior: contain;
             -webkit-overflow-scrolling: touch;
             padding-right: 6px;
@@ -1129,12 +1174,12 @@
 
         body.reference-layout .goal-action {
             justify-content: flex-start;
-            margin-top: auto;
+            margin-top: 0;
         }
 
         body.reference-layout .rescue-action {
             justify-content: center;
-            margin-top: auto;
+            margin-top: 0;
         }
 
         body.reference-layout .floating-action button {
@@ -1183,22 +1228,22 @@
         body.reference-layout .checkpoint-body > .card:nth-of-type(2),
         body.reference-layout .obstacle-body > .card,
         body.reference-layout .rescue-body > .card {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
+            display: block;
+            flex: 0 0 auto;
+            min-height: auto;
         }
 
         body.reference-layout .checkpoint-body > .card:nth-of-type(2) #tiles,
         body.reference-layout .obstacle-body #obstacles,
         body.reference-layout .rescue-body #rescueSection {
             flex: initial;
-            min-height: 0;
+            min-height: auto;
             overflow: visible;
             padding-right: 0;
         }
 
         body.reference-layout .checkpoint-body > .card:nth-of-type(2) .section-stack {
-            min-height: 100%;
+            min-height: 0;
         }
 
         body.reference-layout .checkpoint-body .setup-grid,
@@ -1303,7 +1348,7 @@
             border-radius: 10px;
         }
 
-        @media (max-width: 1180px) and (min-width: 821px) {
+        @media (max-width: 1280px) and (min-width: 821px) {
             body.reference-layout {
                 padding: 10px;
             }
