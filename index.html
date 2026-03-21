@@ -978,6 +978,448 @@
                 height: 180px;
             }
         }
+    
+
+        /* ===== 11-inch iPad dashboard redesign ===== */
+        body.dashboard-mode {
+            background: #ececec;
+            padding: 10px;
+            min-height: 100dvh;
+            overflow-x: hidden;
+        }
+        body.dashboard-mode .app {
+            max-width: 1366px;
+            margin: 0 auto;
+        }
+        body.dashboard-mode .dashboard-shell {
+            display: grid;
+            grid-template-rows: auto minmax(0, 1fr) auto;
+            gap: 12px;
+            min-height: calc(100dvh - 20px);
+        }
+        body.dashboard-mode .dashboard-top {
+            background: #0d6789;
+            border: 3px solid #083d50;
+            border-radius: 0;
+            padding: 14px 18px;
+            color: #fff;
+            box-shadow: none;
+        }
+        body.dashboard-mode #topbar {
+            position: static;
+            top: auto;
+            margin: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
+            padding: 0;
+        }
+        body.dashboard-mode #topbar .topbar-row:first-child {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+        }
+        body.dashboard-mode #topbar .brand h1 {
+            font-size: 1.9rem;
+            font-weight: 900;
+            text-align: center;
+            color: #fff;
+            margin-left: 80px;
+        }
+        body.dashboard-mode #topbar .top-right {
+            gap: 10px;
+        }
+        body.dashboard-mode #topbar .estimate-panel,
+        body.dashboard-mode #topbar .timer-panel {
+            min-width: 160px;
+            background: rgba(255,255,255,.1);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,.25);
+            box-shadow: none;
+            padding: 10px 14px;
+            border-radius: 14px;
+        }
+        body.dashboard-mode #topbar .panel-label,
+        body.dashboard-mode #timerStateBadge {
+            color: rgba(255,255,255,.88);
+        }
+        body.dashboard-mode #liveEstimate,
+        body.dashboard-mode #timer {
+            color: #fff !important;
+            font-size: 1.3rem !important;
+        }
+        body.dashboard-mode #topbar .topbar-row:last-child {
+            margin-top: 10px !important;
+            justify-content: space-between;
+            align-items: center;
+        }
+        body.dashboard-mode #topbar .timer-buttons button {
+            min-height: 48px;
+            font-size: 1rem;
+            padding: 10px 16px;
+            border-radius: 12px;
+        }
+        body.dashboard-mode .dashboard-main {
+            display: grid;
+            grid-template-columns: 1.02fr 1.65fr 1.65fr;
+            gap: 14px;
+            min-height: 0;
+        }
+        body.dashboard-mode .dash-panel {
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            background: #0d6789;
+            border: 3px solid #083d50;
+            color: #fff;
+        }
+        body.dashboard-mode .dash-panel-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 72px;
+            font-size: clamp(1.6rem, 1.9vw, 2.15rem);
+            font-weight: 500;
+            letter-spacing: .02em;
+            border-bottom: 3px solid #083d50;
+            background: rgba(0,0,0,.04);
+        }
+        body.dashboard-mode .dash-panel-body {
+            min-height: 0;
+            flex: 1;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        body.dashboard-mode .layout,
+        body.dashboard-mode .left-col,
+        body.dashboard-mode .right-col,
+        body.dashboard-mode .side-sticky {
+            display: contents;
+        }
+        body.dashboard-mode .card {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            border-radius: 0;
+            color: #fff;
+        }
+        body.dashboard-mode .card-title-row,
+        body.dashboard-mode .card-desc,
+        body.dashboard-mode .muted,
+        body.dashboard-mode .badge,
+        body.dashboard-mode .empty-result,
+        body.dashboard-mode #resultStateBadge,
+        body.dashboard-mode #signatureBadge,
+        body.dashboard-mode .signature-help {
+            display: none !important;
+        }
+        body.dashboard-mode .setup-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        body.dashboard-mode .field label,
+        body.dashboard-mode .summary-item .k,
+        body.dashboard-mode .res-meta,
+        body.dashboard-mode .obs-meta,
+        body.dashboard-mode #rescueMultiplierNote,
+        body.dashboard-mode #rescueOrderStatus,
+        body.dashboard-mode .mistake-label {
+            color: rgba(255,255,255,.82) !important;
+        }
+        body.dashboard-mode input[type="text"],
+        body.dashboard-mode input[type="number"] {
+            min-height: 48px;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,.35);
+            background: rgba(255,255,255,.95);
+            color: #16354a;
+            padding: 10px 12px;
+            font-size: 1rem;
+        }
+        body.dashboard-mode #setCheckpoints,
+        body.dashboard-mode #addStartButton,
+        body.dashboard-mode #goalToggleButton,
+        body.dashboard-mode #rescueToggleButton,
+        body.dashboard-mode .btn-green,
+        body.dashboard-mode .btn-red,
+        body.dashboard-mode .mini-btn,
+        body.dashboard-mode .obsPlus,
+        body.dashboard-mode .obsMinus,
+        body.dashboard-mode .rescuePlus,
+        body.dashboard-mode .rescueMinus,
+        body.dashboard-mode .btn-primary,
+        body.dashboard-mode .btn-outline {
+            border-radius: 10px;
+            border-width: 2px;
+        }
+        body.dashboard-mode .btn-primary,
+        body.dashboard-mode #addStartButton,
+        body.dashboard-mode #goalToggleButton,
+        body.dashboard-mode #rescueToggleButton,
+        body.dashboard-mode #calcScore,
+        body.dashboard-mode #downloadScore,
+        body.dashboard-mode #downloadPDF {
+            background: #ee7a32;
+            border-color: #8e3b11;
+            color: #fff;
+            box-shadow: none;
+        }
+        body.dashboard-mode .btn-outline,
+        body.dashboard-mode #resetPartial {
+            background: rgba(255,255,255,.12);
+            border-color: rgba(255,255,255,.35);
+            color: #fff;
+        }
+        body.dashboard-mode .btn-red,
+        body.dashboard-mode #resetAll,
+        body.dashboard-mode .btn-red:hover {
+            background: #c64532;
+            border-color: #6b160d;
+            color: #fff;
+        }
+        body.dashboard-mode .top-actions {
+            grid-template-columns: 1fr;
+            margin-top: 0;
+        }
+        body.dashboard-mode .big-toggle {
+            min-height: 56px;
+            font-size: 1.1rem;
+        }
+        body.dashboard-mode .summary-grid {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+        body.dashboard-mode .summary-item {
+            background: rgba(255,255,255,.10);
+            border: 1px solid rgba(255,255,255,.18);
+            padding: 10px 12px;
+            border-radius: 12px;
+        }
+        body.dashboard-mode .summary-item .v {
+            font-size: 1rem;
+            color: #fff;
+        }
+        body.dashboard-mode .summary-item .sub {
+            margin-top: 4px;
+            color: rgba(255,255,255,.85);
+            font-size: .82rem;
+            line-height: 1.35;
+        }
+        body.dashboard-mode .left-scroll-zone {
+            min-height: 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        body.dashboard-mode #tiles.section-stack {
+            min-height: 0;
+            flex: 1;
+            overflow: auto;
+            padding-right: 4px;
+        }
+        body.dashboard-mode .tile {
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,.18);
+            background: rgba(255,255,255,.08);
+        }
+        body.dashboard-mode .tile.state-arrived {
+            background: rgba(72, 187, 120, .18);
+            border-color: rgba(124, 255, 168, .6);
+        }
+        body.dashboard-mode .tile.state-notarrived {
+            background: rgba(255, 99, 99, .17);
+            border-color: rgba(255, 154, 154, .55);
+        }
+        body.dashboard-mode .tile-head {
+            margin-bottom: 8px;
+        }
+        body.dashboard-mode .tile-title {
+            font-size: .96rem;
+            color: #fff;
+        }
+        body.dashboard-mode .tile-body {
+            grid-template-columns: 1.05fr 1.15fr;
+            align-items: stretch;
+        }
+        body.dashboard-mode .state-actions {
+            grid-column: 1 / -1;
+            justify-content: stretch;
+        }
+        body.dashboard-mode .state-actions button {
+            flex: 1;
+            min-height: 44px;
+            font-size: .96rem;
+        }
+        body.dashboard-mode .mistake-box {
+            min-width: 0;
+            padding: 10px;
+            border-radius: 12px;
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.18);
+        }
+        body.dashboard-mode .mistake-box > div:first-child > div:last-child {
+            color: rgba(255,255,255,.75) !important;
+        }
+        body.dashboard-mode .count,
+        body.dashboard-mode .res-count,
+        body.dashboard-mode .mistake-display {
+            min-width: 54px;
+            min-height: 44px;
+            font-size: 1.35rem;
+            border-radius: 10px;
+            background: rgba(255,255,255,.97);
+            color: #16354a;
+            border-color: rgba(255,255,255,.25);
+        }
+        body.dashboard-mode .mini-btn {
+            min-width: 44px;
+            min-height: 44px;
+            font-size: 1.45rem;
+            background: #ee7a32;
+            border-color: #8e3b11;
+            color: #fff;
+        }
+        body.dashboard-mode .panel-inline-status {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+        body.dashboard-mode .panel-inline-pill {
+            background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 12px;
+            padding: 10px 12px;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+        }
+        body.dashboard-mode #obstacles,
+        body.dashboard-mode #rescueSection {
+            min-height: 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        body.dashboard-mode .obstacle-container,
+        body.dashboard-mode .rescue-container {
+            min-height: 0;
+            flex: 1;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            overflow: auto;
+            padding-right: 4px;
+        }
+        body.dashboard-mode .obstacle-item,
+        body.dashboard-mode .rescue-item {
+            border-radius: 12px;
+            padding: 12px;
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.18);
+        }
+        body.dashboard-mode .obs-name,
+        body.dashboard-mode .res-name {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        body.dashboard-mode .obs-controls,
+        body.dashboard-mode .res-controls {
+            justify-content: center;
+        }
+        body.dashboard-mode .rescue-item[style*="grid-column"] {
+            grid-column: 1 / -1 !important;
+        }
+        body.dashboard-mode #goalPointPreview,
+        body.dashboard-mode #rescueMultiplierBox,
+        body.dashboard-mode #rescueOrderBox {
+            margin-top: 0 !important;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,.2);
+            background: rgba(255,255,255,.10);
+            padding: 10px 12px;
+            color: #fff;
+            text-align: center;
+        }
+        body.dashboard-mode #rescueMultiplierValue {
+            font-size: 1.65rem;
+            font-weight: 900;
+            color: #fff;
+        }
+        body.dashboard-mode #rescueOrderText {
+            font-weight: 900;
+        }
+        body.dashboard-mode .right-bottom-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        body.dashboard-mode .action-bar {
+            padding: 0;
+            margin: 0;
+        }
+        body.dashboard-mode .action-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 10px;
+        }
+        body.dashboard-mode .action-grid button {
+            min-height: 58px;
+            font-size: 1.05rem;
+            border-radius: 12px;
+        }
+        body.dashboard-mode .secondary-zone {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: 1.25fr 1fr;
+            gap: 14px;
+        }
+        body.dashboard-mode .secondary-zone .card {
+            background: #ffffff;
+            border: 2px solid #d6dee7;
+            box-shadow: none;
+            border-radius: 16px;
+            padding: 16px;
+            color: #16354a;
+        }
+        body.dashboard-mode .secondary-zone .card-title-row,
+        body.dashboard-mode .secondary-zone .badge,
+        body.dashboard-mode .secondary-zone .card-desc,
+        body.dashboard-mode .secondary-zone .empty-result,
+        body.dashboard-mode .secondary-zone .signature-help {
+            display: block !important;
+        }
+        body.dashboard-mode .secondary-zone .badge {
+            display: inline-flex !important;
+        }
+        body.dashboard-mode .secondary-zone .card-title {
+            color: #16354a;
+        }
+        body.dashboard-mode .secondary-zone .card-desc {
+            color: #58728a;
+            margin-top: 4px;
+        }
+        body.dashboard-mode .secondary-zone .signature-layout {
+            grid-template-columns: 1.15fr .85fr;
+        }
+        @media (max-width: 1100px) {
+            body.dashboard-mode .dashboard-main {
+                grid-template-columns: 1fr;
+            }
+            body.dashboard-mode .dashboard-shell {
+                min-height: auto;
+            }
+            body.dashboard-mode .secondary-zone {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 
@@ -1017,7 +1459,7 @@
                     <div class="card-title-row">
                         <div>
                             <h2 class="card-title">試合情報と基本操作</h2>
-                            <p class="card-desc">最初にチーム名とチェックポイント数を設定します。</p>
+                            <p class="card-desc">最初にチーム名とチェックポイント数を設定します。主要トグルは大きめボタンにして、iPadでも押し間違えにくくしています。</p>
                         </div>
                         <span class="badge primary">入力エリア</span>
                     </div>
@@ -1040,6 +1482,7 @@
                         <button id="addStartButton" class="btn-primary big-toggle">スタート点獲得</button>
                     </div>
                     <div class="muted" style="margin-top:12px; font-weight:700; font-size:1rem;">
+                        ※「ゴール点獲得」「救助完了」は採点終盤で押しやすいよう、ページ下側に配置しています。
                     </div>
 
                     <div class="summary-grid" style="margin-top:14px;">
@@ -1070,7 +1513,7 @@
                     <div class="card-title-row">
                         <div>
                             <h2 class="card-title">タイル点（チェックポイントごとの進行）</h2>
-                            <p class="card-desc">各区間でタイル数とミス回数を入力し、「到達」または「スキップ」をタップします。</p>
+                            <p class="card-desc">各区間でタイル数とミス回数を入力し、「到達」または「スキップ」をタップします。右側の判定ボタンは片手でも押しやすいサイズです。</p>
                         </div>
                         <span class="badge" id="tileCountBadge">区間数: 0</span>
                     </div>
@@ -1081,7 +1524,7 @@
                     <div class="card-title-row">
                         <div>
                             <h2 class="card-title">障害物カウント</h2>
-                            <p class="card-desc">障害物は大きめの＋/−で素早く加算・減算できます。</p>
+                            <p class="card-desc">障害物は大きめの＋/−で素早く加算・減算できます。競技中の連続入力を想定した配置です。</p>
                         </div>
                         <span class="badge" id="obstacleSummaryBadge">合計 0 点</span>
                     </div>
@@ -1160,7 +1603,7 @@
                         <div class="card-title-row">
                             <div>
                                 <h2 class="card-title">救助エリア</h2>
-                                <p class="card-desc">救助数と停止回数を大きなカウンターで操作できます</p>
+                                <p class="card-desc">救助数と停止回数を大きなカウンターで操作できます。右側に固定して、途中経過を見失いにくくしています。</p>
                             </div>
                             <span class="badge success">救助管理</span>
                         </div>
@@ -1223,7 +1666,7 @@
                         <div class="card-title-row">
                             <div>
                                 <h2 class="card-title">採点結果</h2>
-                                <p class="card-desc">採点後にTXT / PDFで保存できます。</p>
+                                <p class="card-desc">採点後にTXT / PDFで保存できます。操作ボタンはページ下部にそのまま配置しています。</p>
                             </div>
                             <span class="badge warning" id="resultStateBadge">未採点</span>
                         </div>
@@ -1269,7 +1712,7 @@
                         <div class="card-title-row">
                             <div>
                                 <h2 class="card-title">試合終盤の確定操作</h2>
-                                <p class="card-desc">最後の確認後に押す操作を下側にまとめています。</p>
+                                <p class="card-desc">最後の確認後に押す操作を下側にまとめています。ゴール確定と救助完了の入力をここで行ってください。</p>
                             </div>
                             <span class="badge warning">終盤操作</span>
                         </div>
@@ -1324,7 +1767,7 @@
         /******************************************************************
          * 1) タイマー
          ******************************************************************/
-        const MATCH_SECONDS = 480;
+        const MATCH_SECONDS = 10;
         let totalTime = MATCH_SECONDS;
         let timerInterval = null;
 
@@ -1666,26 +2109,9 @@
             return segmentsData.filter(seg => seg.status === status).length;
         }
 
-        function getLineStopCount() {
-            return segmentsData.reduce((sum, seg) => sum + (seg.mistakes || 0), 0);
-        }
-
-        function getGoalPenaltyStopCount() {
-            return getLineStopCount() + rescueStopCount;
-        }
-
-        function syncGoalPointsIfAcquired() {
-            if (!goalPointAcquired) return;
-            goalPoints = calcGoalByMistakes();
-            const btn = document.getElementById('goalToggleButton');
-            if (btn) {
-                setBigButtonState(btn, true, "ゴール点獲得", `ゴール点獲得済み（${goalPoints}点）`);
-            }
-        }
-
         function calcGoalByMistakes() {
-            const totalStops = getGoalPenaltyStopCount();
-            return Math.max(0, 60 - (totalStops * 5));
+            const totalMistakes = segmentsData.reduce((sum, seg) => sum + (seg.mistakes || 0), 0);
+            return Math.max(0, 60 - (totalMistakes * 5));
         }
 
         function calcCurrentTileScore() {
@@ -1872,7 +2298,7 @@
                 mistakeBox.innerHTML = `
                     <div>
                         <div class="mistake-label">ミス回数</div>
-                    
+                        <div style="color:var(--muted);font-size:.84rem;font-weight:700;">この区間の進行停止回数</div>
                     </div>
                 `;
 
@@ -2073,7 +2499,6 @@
 
             updateRescueOrderUI();
             updateRescueMultiplierUI();
-            updateGoalPreview();
             updateLiveSummary();
         }
 
@@ -2128,25 +2553,16 @@
 
         function updateGoalPreview() {
             const preview = document.getElementById('goalPointPreview');
-            const lineStops = getLineStopCount();
-            const goalPenaltyStops = getGoalPenaltyStopCount();
-            const predicted = calcGoalByMistakes();
-
-            if (goalPointAcquired) syncGoalPointsIfAcquired();
-
-            const detailText = `ライン停止 ${lineStops}回 + 救助停止 ${rescueStopCount}回 = 合計 ${goalPenaltyStops}回`;
-
             if (!segmentsData || segmentsData.length === 0) {
-                preview.innerHTML = goalPointAcquired
-                    ? `ゴール点: <b>${goalPoints}点</b>（確定）<br><span class="muted">${detailText}</span>`
-                    : `ゴール点: <b>未確定</b><br><span class="muted">いま計算すると ${predicted}点 / ${detailText}</span>`;
+                preview.innerHTML = goalPointAcquired ? `ゴール点: <b>${goalPoints}点</b>（確定）` : "ゴール点: <b>未確定</b>";
                 return;
             }
 
+            const predicted = calcGoalByMistakes();
             if (goalPointAcquired) {
-                preview.innerHTML = `ゴール点: <b>${goalPoints}点</b>（確定）<br><span class="muted">参考: いま計算すると ${predicted}点 / ${detailText}</span>`;
+                preview.innerHTML = `ゴール点: <b>${goalPoints}点</b>（確定）<br><span class="muted">参考: いま計算すると ${predicted}点</span>`;
             } else {
-                preview.innerHTML = `ゴール点: <b>未確定</b><br><span class="muted">いま計算すると ${predicted}点 / ${detailText}</span>`;
+                preview.innerHTML = `ゴール点: <b>未確定</b><br><span class="muted">いま計算すると ${predicted}点</span>`;
             }
         }
 
@@ -2316,9 +2732,7 @@
                 text += `${name} : ${score} 点 (回数：${count} × ${pts}点)\n`;
             });
 
-            const lineStopCount = getLineStopCount();
-            const goalPenaltyStopCount = getGoalPenaltyStopCount();
-            if (goalPointAcquired) syncGoalPointsIfAcquired();
+            const totalMistakes = segmentsData.reduce((sum, seg) => sum + (seg.mistakes || 0), 0);
             const baseScore = startPoint + totalTileScore + totalObstacleScore + goalPoints;
             const rescueMult = getRescueMultiplier();
             const finalScore = baseScore * rescueMult;
@@ -2363,12 +2777,11 @@
                     <div class="footer-note">救助完了をONにすると、現在の条件では ×${calcRescueMultiplierForPreview().toFixed(2)} が適用予定です。</div>
                 `;
             }
+
             text += `\n【最終得点】\n${finalScore.toFixed(0)}点\n`;
             text += "\n【合計内訳】\n";
-            text += `ライン進行停止 : ${lineStopCount}回\n`;
-            text += `救助ゾーン進行停止 : ${rescueStopCount}回\n`;
-            text += `ゴール点計算対象停止合計 : ${goalPenaltyStopCount}回\n`;
-            text += `ゴール点計算 : 60 - (${goalPenaltyStopCount} × 5) = ${goalPoints}点\n`;
+            text += `進行停止合計数 : ${totalMistakes}回\n`;
+            text += `ゴール点計算 : 60 - (${totalMistakes} × 5) = ${goalPoints}点\n`;
             text += "スタート点 ＋ タイル点合計 ＋ 障害物合計 ＋ ゴール点 = 総合得点\n";
             text += `　　${startPoint}点 ＋ ${totalTileScore}点 ＋ ${totalObstacleScore}点 ＋ ${goalPoints}点 = ${baseScore}点\n`;
             text += `被災者救助乗数 : ${rescueMult.toFixed(2)}\n`;
@@ -2394,9 +2807,6 @@
                             <div class="result-line"><span>スタート点</span><span>${startPoint}点</span></div>
                             <div class="result-line"><span>タイル点合計</span><span>${totalTileScore}点</span></div>
                             <div class="result-line"><span>障害物合計</span><span>${totalObstacleScore}点</span></div>
-                            <div class="result-line"><span>ライン進行停止</span><span>${lineStopCount}回</span></div>
-                            <div class="result-line"><span>救助ゾーン進行停止</span><span>${rescueStopCount}回</span></div>
-                            <div class="result-line"><span>ゴール点計算対象停止合計</span><span>${goalPenaltyStopCount}回</span></div>
                             <div class="result-line"><span>ゴール点</span><span>${goalPointAcquired ? `${goalPoints}点（確定）` : `未確定 / 現在 ${calcGoalByMistakes()}点`}</span></div>
                             <div class="result-line"><span>ベース得点</span><span><b>${baseScore}点</b></span></div>
                             <div class="result-line"><span>救助倍率</span><span><b>×${rescueMult.toFixed(2)}</b></span></div>
@@ -2417,7 +2827,7 @@
                     <div class="result-block">
                         <h3>障害物の詳細</h3>
                         <div class="result-list">${obstacleHTML}</div>
-                        <div class="footer-note">ライン停止 ${lineStopCount}回 + 救助停止 ${rescueStopCount}回 = 合計 ${goalPenaltyStopCount}回 / ゴール点計算: 60 - (${goalPenaltyStopCount} × 5) = ${goalPoints}点</div>
+                        <div class="footer-note">進行停止合計数: ${totalMistakes}回 / ゴール点計算: 60 - (${totalMistakes} × 5) = ${goalPoints}点</div>
                     </div>
                 </div>
             `;
@@ -2516,9 +2926,7 @@
                 });
             });
 
-            const lineStopCount = getLineStopCount();
-            const goalPenaltyStopCount = getGoalPenaltyStopCount();
-            if (goalPointAcquired) syncGoalPointsIfAcquired();
+            const totalMistakes = segmentsData.reduce((sum, seg) => sum + (seg.mistakes || 0), 0);
             const baseScore = startPoint + totalTileScore + totalObstacleScore + goalPoints;
 
             const rescuePreview = calcRescueMultiplierForPreview();
@@ -2607,9 +3015,7 @@
                 ['ゴール点', `${goalPoints}点`],
                 ['障害物合計', `${totalObstacleScore}点`],
                 ['タイル点合計', `${totalTileScore}点`],
-                ['ライン進行停止', `${lineStopCount}回`],
-                ['救助ゾーン進行停止', `${rescueStopCount}回`],
-                ['ゴール点計算対象停止合計', `${goalPenaltyStopCount}回`],
+                ['進行停止合計', `${totalMistakes}回`],
                 ['ベース得点', `${baseScore}点`],
                 ['救助完了', rescueStatusText],
                 ['救助倍率', rescueApplied ? `×${rescueMult.toFixed(2)}` : `×1.00（予定: ×${rescuePreview.toFixed(2)}）`],
@@ -2937,6 +3343,152 @@
         initSignaturePad();
         updateLiveSummary();
     </script>
+
+<script>
+window.addEventListener('load', function() {
+  document.body.classList.add('dashboard-mode');
+  const app = document.querySelector('.app');
+  const topbar = document.getElementById('topbar');
+  const layout = document.querySelector('.layout');
+  const leftCol = document.querySelector('.left-col');
+  const rightCol = document.querySelector('.right-col');
+  const actionBar = document.querySelector('.action-bar');
+  if (!app || !topbar || !layout || !leftCol || !rightCol || !actionBar) return;
+
+  const setupCard = leftCol.children[0];
+  const tileCard = leftCol.children[1];
+  const obstacleCard = leftCol.children[2];
+  const rescueCard = rightCol.children[0];
+  const resultCard = rightCol.children[1];
+  const signatureCard = rightCol.children[2];
+  const finishCard = rightCol.children[3];
+
+  const shell = document.createElement('div');
+  shell.className = 'dashboard-shell';
+
+  const topWrap = document.createElement('div');
+  topWrap.className = 'dashboard-top';
+  topWrap.appendChild(topbar);
+
+  const mainWrap = document.createElement('div');
+  mainWrap.className = 'dashboard-main';
+
+  const mkPanel = (title, cls) => {
+    const panel = document.createElement('section');
+    panel.className = 'dash-panel ' + cls;
+    const h = document.createElement('div');
+    h.className = 'dash-panel-title';
+    h.textContent = title;
+    const b = document.createElement('div');
+    b.className = 'dash-panel-body';
+    panel.append(h,b);
+    return {panel, body:b};
+  };
+
+  const left = mkPanel('チェックポイント関係', 'dash-left');
+  const center = mkPanel('障害物', 'dash-center');
+  const right = mkPanel('救助', 'dash-right');
+
+  // Left panel content
+  const setupGrid = setupCard.querySelector('.setup-grid');
+  const startBtn = document.getElementById('addStartButton');
+  const summaries = setupCard.querySelector('.summary-grid');
+  const tiles = document.getElementById('tiles');
+  const tileBadge = document.getElementById('tileCountBadge');
+  const goalBtn = document.getElementById('goalToggleButton');
+
+  const leftTop = document.createElement('div');
+  leftTop.className = 'left-top-controls';
+  leftTop.appendChild(setupGrid);
+  leftTop.appendChild(startBtn);
+  left.body.appendChild(leftTop);
+
+  const tileStatus = document.createElement('div');
+  tileStatus.className = 'panel-inline-status';
+  const p1 = document.createElement('div'); p1.className='panel-inline-pill'; p1.id='tileBadgeMirror'; p1.textContent = tileBadge ? tileBadge.textContent : '区間数: 0';
+  const p2 = document.createElement('div'); p2.className='panel-inline-pill'; p2.id='goalPreviewMirror'; p2.textContent = 'ゴール点: 未確定';
+  tileStatus.append(p1,p2);
+  left.body.appendChild(tileStatus);
+
+  const leftScroll = document.createElement('div');
+  leftScroll.className = 'left-scroll-zone';
+  if (summaries) leftScroll.appendChild(summaries);
+  if (tiles) leftScroll.appendChild(tiles);
+  left.body.appendChild(leftScroll);
+  if (goalBtn) left.body.appendChild(goalBtn);
+
+  // Center panel content
+  const obstacleBadge = document.getElementById('obstacleSummaryBadge');
+  if (obstacleBadge) {
+    const cstat = document.createElement('div');
+    cstat.className = 'panel-inline-pill';
+    cstat.id = 'obstacleBadgeMirror';
+    cstat.textContent = obstacleBadge.textContent;
+    center.body.appendChild(cstat);
+  }
+  const obstacles = document.getElementById('obstacles');
+  if (obstacles) center.body.appendChild(obstacles);
+
+  // Right panel content
+  const rescueSection = document.getElementById('rescueSection');
+  const goalPreview = document.getElementById('goalPointPreview');
+  const multiplier = document.getElementById('rescueMultiplierBox');
+  const order = document.getElementById('rescueOrderBox');
+  const rescueBtn = document.getElementById('rescueToggleButton');
+  if (rescueSection) right.body.appendChild(rescueSection);
+  if (goalPreview) right.body.appendChild(goalPreview);
+  if (multiplier) right.body.appendChild(multiplier);
+  if (order) right.body.appendChild(order);
+  if (rescueBtn) {
+    const wrap = document.createElement('div');
+    wrap.className = 'right-bottom-buttons';
+    wrap.appendChild(rescueBtn);
+    right.body.appendChild(wrap);
+  }
+
+  mainWrap.append(left.panel, center.panel, right.panel);
+
+  const secondary = document.createElement('div');
+  secondary.className = 'secondary-zone';
+  secondary.append(resultCard, signatureCard);
+
+  shell.append(topWrap, mainWrap, actionBar);
+  app.innerHTML = '';
+  app.append(shell, secondary);
+
+  const syncMirror = () => {
+    const tileBadgeMirror = document.getElementById('tileBadgeMirror');
+    const obstacleBadgeMirror = document.getElementById('obstacleBadgeMirror');
+    const goalPreviewMirror = document.getElementById('goalPreviewMirror');
+    const liveEstimate = document.getElementById('liveEstimate');
+    if (tileBadgeMirror && document.getElementById('tileCountBadge')) tileBadgeMirror.textContent = document.getElementById('tileCountBadge').textContent;
+    if (obstacleBadgeMirror && document.getElementById('obstacleSummaryBadge')) obstacleBadgeMirror.textContent = document.getElementById('obstacleSummaryBadge').textContent;
+    if (goalPreviewMirror && document.getElementById('goalPointPreview')) goalPreviewMirror.textContent = document.getElementById('goalPointPreview').textContent.replace(/\s+/g,' ').trim();
+    if (liveEstimate) {
+      const raw = liveEstimate.textContent || '';
+      liveEstimate.textContent = raw.replace(/^現在の見込み点\s*:?\s*/,'').trim();
+    }
+  };
+  syncMirror();
+  const mo = new MutationObserver(syncMirror);
+  ['tileCountBadge','obstacleSummaryBadge','goalPointPreview','liveEstimate'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) mo.observe(el, {childList:true, subtree:true, characterData:true});
+  });
+
+  // Compact labels
+  const brand = topbar.querySelector('.brand h1');
+  if (brand) brand.textContent = '得点と時間関係';
+  const stateBadge = document.getElementById('timerStateBadge');
+  if (stateBadge) stateBadge.style.display = 'inline-flex';
+
+  // Ensure signature canvas still sizes correctly after move
+  if (typeof resizeSignatureCanvas === 'function') {
+    setTimeout(() => { try { resizeSignatureCanvas(); } catch(e) {} }, 80);
+  }
+});
+</script>
+
 </body>
 
 </html>
