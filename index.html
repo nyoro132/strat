@@ -1076,6 +1076,7 @@
             gap: 18px;
             align-items: stretch;
             height: min(74dvh, calc(100vh - 250px));
+            height: min(74vh, calc(100vh - 250px));
             min-height: 620px;
         }
 
@@ -1302,15 +1303,101 @@
             border-radius: 10px;
         }
 
-        @media (max-width: 1300px) {
+        @media (max-width: 1180px) and (min-width: 821px) {
+            body.reference-layout {
+                padding: 10px;
+            }
+
+            body.reference-layout .app {
+                max-width: 100%;
+            }
+
+            body.reference-layout .topbar {
+                top: 4px;
+                padding: 14px 16px;
+                margin-bottom: 12px;
+                border-radius: 18px;
+            }
+
+            body.reference-layout .topbar-row {
+                gap: 10px;
+            }
+
+            body.reference-layout .estimate-panel,
+            body.reference-layout .timer-panel {
+                min-width: 200px;
+                padding: 10px 12px;
+            }
+
+            body.reference-layout .reference-shell {
+                gap: 12px;
+            }
+
             body.reference-layout .reference-grid {
-                grid-template-columns: 1fr;
-                height: auto;
-                min-height: 0;
+                grid-template-columns: minmax(170px, 0.72fr) minmax(220px, 1fr) minmax(220px, 1fr);
+                gap: 12px;
+                height: calc(100dvh - 170px);
+                min-height: 520px;
             }
 
             body.reference-layout .reference-panel {
-                min-height: auto;
+                padding: 10px;
+            }
+
+            body.reference-layout .reference-panel-title {
+                margin: 2px 0 8px;
+                font-size: clamp(1.15rem, 2.5vw, 1.8rem);
+            }
+
+            body.reference-layout .reference-panel-body {
+                gap: 10px;
+                padding-right: 2px;
+            }
+
+            body.reference-layout .reference-panel .card {
+                padding: 10px;
+            }
+
+            body.reference-layout .card-title {
+                font-size: 0.98rem;
+            }
+
+            body.reference-layout .card-desc,
+            body.reference-layout .badge,
+            body.reference-layout .panel-label {
+                font-size: 0.78rem;
+            }
+
+            body.reference-layout .floating-action button {
+                min-width: 0;
+                width: 100%;
+                min-height: 58px;
+                font-size: clamp(1rem, 2.1vw, 1.35rem);
+                padding: 0 12px;
+            }
+
+            body.reference-layout .setup-grid,
+            body.reference-layout .summary-grid,
+            body.reference-layout .obstacle-container,
+            body.reference-layout .rescue-container {
+                gap: 8px;
+            }
+
+            body.reference-layout .tile,
+            body.reference-layout .obstacle-item,
+            body.reference-layout .rescue-item {
+                padding: 10px;
+            }
+
+            body.reference-layout .mini-btn {
+                min-width: 42px;
+                min-height: 42px;
+            }
+
+            body.reference-layout .count,
+            body.reference-layout .res-count {
+                min-width: 34px;
+                font-size: 1.05rem;
             }
 
             body.reference-layout .reference-bottom-area,
@@ -1334,6 +1421,16 @@
 
             body.reference-layout .topbar {
                 padding: 16px;
+            }
+
+            body.reference-layout .reference-grid {
+                grid-template-columns: 1fr;
+                height: auto;
+                min-height: 0;
+            }
+
+            body.reference-layout .reference-panel {
+                min-height: auto;
             }
 
             body.reference-layout .estimate-panel,
